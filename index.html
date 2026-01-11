@@ -241,7 +241,7 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">Distributionally Robust Extended Kalman Filter</h1>
             <div class="is-size-5 publication-authors">
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
@@ -335,34 +335,30 @@
 
 
 <!-- Image carousel -->
+<!--
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
-        <!-- TODO: Replace with your research result images -->
         <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
         <h2 class="subtitle has-text-centered">
           First image description.
         </h2>
       </div>
       <div class="item">
-        <!-- Your image here -->
         <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
         <h2 class="subtitle has-text-centered">
           Second image description.
         </h2>
       </div>
       <div class="item">
-        <!-- Your image here -->
         <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
         <h2 class="subtitle has-text-centered">
          Third image description.
        </h2>
      </div>
      <div class="item">
-      <!-- Your image here -->
       <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
       <h2 class="subtitle has-text-centered">
         Fourth image description.
@@ -372,22 +368,22 @@
 </div>
 </div>
 </section>
+-->
 <!-- End image carousel -->
 
 
 
 
 <!-- Youtube video -->
+<!--
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <!-- Paper video. -->
       <h2 class="title is-3">Video Presentation</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          
+
           <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
             <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
@@ -395,6 +391,7 @@
     </div>
   </div>
 </section>
+-->
 <!-- End youtube video -->
 
 
@@ -475,92 +472,128 @@
   </div>
 </section>
 
-<!-- 2D Target Tracking Results -->
+<!-- 2D Target Tracking Results - Gaussian Noise -->
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">2D Target Tracking Results</h2>
-      <div id="results-carousel-2d" class="carousel results-carousel">
+      <h2 class="title is-3">2D Target Tracking Results - Gaussian Noise</h2>
+      <div id="results-carousel-2d-gaussian" class="carousel results-carousel">
         <!-- Gaussian Noise - Mean -->
-        <div class="item">
-          <img src="static/videos/tracking_video_MEAN_normal_fps15.gif" alt="2D Gaussian Noise - Mean" loading="lazy"/>
+        <div class="item item-video">
+          <video poster="" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/tracking_video_MEAN_normal_fps15.mp4" type="video/mp4">
+          </video>
           <h2 class="subtitle has-text-centered">
             Gaussian Noise - Mean
           </h2>
         </div>
         <!-- Gaussian Noise - Instance 1 -->
-        <div class="item">
-          <img src="static/videos/tracking_video_INSTANCE_1_normal_fps15.gif" alt="2D Gaussian Noise - Instance 1" loading="lazy"/>
+        <div class="item item-video">
+          <video poster="" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/tracking_video_INSTANCE_1_normal_fps15.mp4" type="video/mp4">
+          </video>
           <h2 class="subtitle has-text-centered">
             Gaussian Noise - Instance 1
           </h2>
         </div>
         <!-- Gaussian Noise - Instance 2 -->
-        <div class="item">
-          <img src="static/videos/tracking_video_INSTANCE_2_normal_fps15.gif" alt="2D Gaussian Noise - Instance 2" loading="lazy"/>
+        <div class="item item-video">
+          <video poster="" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/tracking_video_INSTANCE_2_normal_fps15.mp4" type="video/mp4">
+          </video>
           <h2 class="subtitle has-text-centered">
             Gaussian Noise - Instance 2
           </h2>
         </div>
         <!-- Gaussian Noise - Instance 3 -->
-        <div class="item">
-          <img src="static/videos/tracking_video_INSTANCE_3_normal_fps15.gif" alt="2D Gaussian Noise - Instance 3" loading="lazy"/>
+        <div class="item item-video">
+          <video poster="" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/tracking_video_INSTANCE_3_normal_fps15.mp4" type="video/mp4">
+          </video>
           <h2 class="subtitle has-text-centered">
             Gaussian Noise - Instance 3
           </h2>
         </div>
         <!-- Gaussian Noise - Instance 4 -->
-        <div class="item">
-          <img src="static/videos/tracking_video_INSTANCE_4_normal_fps15.gif" alt="2D Gaussian Noise - Instance 4" loading="lazy"/>
+        <div class="item item-video">
+          <video poster="" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/tracking_video_INSTANCE_4_normal_fps15.mp4" type="video/mp4">
+          </video>
           <h2 class="subtitle has-text-centered">
             Gaussian Noise - Instance 4
           </h2>
         </div>
         <!-- Gaussian Noise - Instance 5 -->
-        <div class="item">
-          <img src="static/videos/tracking_video_INSTANCE_5_normal_fps15.gif" alt="2D Gaussian Noise - Instance 5" loading="lazy"/>
+        <div class="item item-video">
+          <video poster="" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/tracking_video_INSTANCE_5_normal_fps15.mp4" type="video/mp4">
+          </video>
           <h2 class="subtitle has-text-centered">
             Gaussian Noise - Instance 5
           </h2>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End 2D Gaussian Noise Results -->
+
+<!-- 2D Target Tracking Results - U-Quadratic Noise -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">2D Target Tracking Results - U-Quadratic Noise</h2>
+      <div id="results-carousel-2d-quadratic" class="carousel results-carousel">
         <!-- U-Quadratic Noise - Mean -->
-        <div class="item">
-          <img src="static/videos/tracking_video_MEAN_quadratic_fps15.gif" alt="2D U-Quadratic Noise - Mean" loading="lazy"/>
+        <div class="item item-video">
+          <video poster="" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/tracking_video_MEAN_quadratic_fps15.mp4" type="video/mp4">
+          </video>
           <h2 class="subtitle has-text-centered">
             U-Quadratic Noise - Mean
           </h2>
         </div>
         <!-- U-Quadratic Noise - Instance 1 -->
-        <div class="item">
-          <img src="static/videos/tracking_video_INSTANCE_1_quadratic_fps15.gif" alt="2D U-Quadratic Noise - Instance 1" loading="lazy"/>
+        <div class="item item-video">
+          <video poster="" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/tracking_video_INSTANCE_1_quadratic_fps15.mp4" type="video/mp4">
+          </video>
           <h2 class="subtitle has-text-centered">
             U-Quadratic Noise - Instance 1
           </h2>
         </div>
         <!-- U-Quadratic Noise - Instance 2 -->
-        <div class="item">
-          <img src="static/videos/tracking_video_INSTANCE_2_quadratic_fps15.gif" alt="2D U-Quadratic Noise - Instance 2" loading="lazy"/>
+        <div class="item item-video">
+          <video poster="" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/tracking_video_INSTANCE_2_quadratic_fps15.mp4" type="video/mp4">
+          </video>
           <h2 class="subtitle has-text-centered">
             U-Quadratic Noise - Instance 2
           </h2>
         </div>
         <!-- U-Quadratic Noise - Instance 3 -->
-        <div class="item">
-          <img src="static/videos/tracking_video_INSTANCE_3_quadratic_fps15.gif" alt="2D U-Quadratic Noise - Instance 3" loading="lazy"/>
+        <div class="item item-video">
+          <video poster="" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/tracking_video_INSTANCE_3_quadratic_fps15.mp4" type="video/mp4">
+          </video>
           <h2 class="subtitle has-text-centered">
             U-Quadratic Noise - Instance 3
           </h2>
         </div>
         <!-- U-Quadratic Noise - Instance 4 -->
-        <div class="item">
-          <img src="static/videos/tracking_video_INSTANCE_4_quadratic_fps15.gif" alt="2D U-Quadratic Noise - Instance 4" loading="lazy"/>
+        <div class="item item-video">
+          <video poster="" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/tracking_video_INSTANCE_4_quadratic_fps15.mp4" type="video/mp4">
+          </video>
           <h2 class="subtitle has-text-centered">
             U-Quadratic Noise - Instance 4
           </h2>
         </div>
         <!-- U-Quadratic Noise - Instance 5 -->
-        <div class="item">
-          <img src="static/videos/tracking_video_INSTANCE_5_quadratic_fps15.gif" alt="2D U-Quadratic Noise - Instance 5" loading="lazy"/>
+        <div class="item item-video">
+          <video poster="" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/tracking_video_INSTANCE_5_quadratic_fps15.mp4" type="video/mp4">
+          </video>
           <h2 class="subtitle has-text-centered">
             U-Quadratic Noise - Instance 5
           </h2>
@@ -569,7 +602,7 @@
     </div>
   </div>
 </section>
-<!-- End 2D Target Tracking Results -->
+<!-- End 2D U-Quadratic Noise Results -->
 
 
 <!-- 3D Coordinated-Turn Model -->
@@ -632,92 +665,128 @@
   </div>
 </section>
 
-<!-- 3D Target Tracking Results -->
-<section class="hero is-small">
+<!-- 3D Target Tracking Results - Gaussian Noise -->
+<section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">3D Target Tracking Results</h2>
-      <div id="results-carousel" class="carousel results-carousel">
+      <h2 class="title is-3">3D Target Tracking Results - Gaussian Noise</h2>
+      <div id="results-carousel-3d-gaussian" class="carousel results-carousel">
         <!-- Gaussian Noise - Mean Zoomed -->
-        <div class="item">
-          <img src="static/videos/tracking_video_MEAN_ZOOMED_normal_fps15.gif" alt="Gaussian Noise - Mean Zoomed" loading="lazy"/>
+        <div class="item item-video">
+          <video poster="" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/tracking_video_MEAN_ZOOMED_normal_fps15.mp4" type="video/mp4">
+          </video>
           <h2 class="subtitle has-text-centered">
             Gaussian Noise - Mean (Zoomed)
           </h2>
         </div>
         <!-- Gaussian Noise - Instance 1 -->
-        <div class="item">
-          <img src="static/videos/tracking_video_INSTANCE_1_ZOOMED_normal_fps15.gif" alt="Gaussian Noise - Instance 1" loading="lazy"/>
+        <div class="item item-video">
+          <video poster="" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/tracking_video_INSTANCE_1_ZOOMED_normal_fps15.mp4" type="video/mp4">
+          </video>
           <h2 class="subtitle has-text-centered">
             Gaussian Noise - Instance 1
           </h2>
         </div>
         <!-- Gaussian Noise - Instance 2 -->
-        <div class="item">
-          <img src="static/videos/tracking_video_INSTANCE_2_ZOOMED_normal_fps15.gif" alt="Gaussian Noise - Instance 2" loading="lazy"/>
+        <div class="item item-video">
+          <video poster="" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/tracking_video_INSTANCE_2_ZOOMED_normal_fps15.mp4" type="video/mp4">
+          </video>
           <h2 class="subtitle has-text-centered">
             Gaussian Noise - Instance 2
           </h2>
         </div>
         <!-- Gaussian Noise - Instance 3 -->
-        <div class="item">
-          <img src="static/videos/tracking_video_INSTANCE_3_ZOOMED_normal_fps15.gif" alt="Gaussian Noise - Instance 3" loading="lazy"/>
+        <div class="item item-video">
+          <video poster="" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/tracking_video_INSTANCE_3_ZOOMED_normal_fps15.mp4" type="video/mp4">
+          </video>
           <h2 class="subtitle has-text-centered">
             Gaussian Noise - Instance 3
           </h2>
         </div>
         <!-- Gaussian Noise - Instance 4 -->
-        <div class="item">
-          <img src="static/videos/tracking_video_INSTANCE_4_ZOOMED_normal_fps15.gif" alt="Gaussian Noise - Instance 4" loading="lazy"/>
+        <div class="item item-video">
+          <video poster="" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/tracking_video_INSTANCE_4_ZOOMED_normal_fps15.mp4" type="video/mp4">
+          </video>
           <h2 class="subtitle has-text-centered">
             Gaussian Noise - Instance 4
           </h2>
         </div>
         <!-- Gaussian Noise - Instance 5 -->
-        <div class="item">
-          <img src="static/videos/tracking_video_INSTANCE_5_ZOOMED_normal_fps15.gif" alt="Gaussian Noise - Instance 5" loading="lazy"/>
+        <div class="item item-video">
+          <video poster="" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/tracking_video_INSTANCE_5_ZOOMED_normal_fps15.mp4" type="video/mp4">
+          </video>
           <h2 class="subtitle has-text-centered">
             Gaussian Noise - Instance 5
           </h2>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End 3D Gaussian Noise Results -->
+
+<!-- 3D Target Tracking Results - U-Quadratic Noise -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">3D Target Tracking Results - U-Quadratic Noise</h2>
+      <div id="results-carousel-3d-quadratic" class="carousel results-carousel">
         <!-- U-Quadratic Noise - Mean Zoomed -->
-        <div class="item">
-          <img src="static/videos/tracking_video_MEAN_ZOOMED_quadratic_fps15.gif" alt="U-Quadratic Noise - Mean Zoomed" loading="lazy"/>
+        <div class="item item-video">
+          <video poster="" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/tracking_video_MEAN_ZOOMED_quadratic_fps15.mp4" type="video/mp4">
+          </video>
           <h2 class="subtitle has-text-centered">
             U-Quadratic Noise - Mean (Zoomed)
           </h2>
         </div>
         <!-- U-Quadratic Noise - Instance 1 -->
-        <div class="item">
-          <img src="static/videos/tracking_video_INSTANCE_1_ZOOMED_quadratic_fps15.gif" alt="U-Quadratic Noise - Instance 1" loading="lazy"/>
+        <div class="item item-video">
+          <video poster="" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/tracking_video_INSTANCE_1_ZOOMED_quadratic_fps15.mp4" type="video/mp4">
+          </video>
           <h2 class="subtitle has-text-centered">
             U-Quadratic Noise - Instance 1
           </h2>
         </div>
         <!-- U-Quadratic Noise - Instance 2 -->
-        <div class="item">
-          <img src="static/videos/tracking_video_INSTANCE_2_ZOOMED_quadratic_fps15.gif" alt="U-Quadratic Noise - Instance 2" loading="lazy"/>
+        <div class="item item-video">
+          <video poster="" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/tracking_video_INSTANCE_2_ZOOMED_quadratic_fps15.mp4" type="video/mp4">
+          </video>
           <h2 class="subtitle has-text-centered">
             U-Quadratic Noise - Instance 2
           </h2>
         </div>
         <!-- U-Quadratic Noise - Instance 3 -->
-        <div class="item">
-          <img src="static/videos/tracking_video_INSTANCE_3_ZOOMED_quadratic_fps15.gif" alt="U-Quadratic Noise - Instance 3" loading="lazy"/>
+        <div class="item item-video">
+          <video poster="" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/tracking_video_INSTANCE_3_ZOOMED_quadratic_fps15.mp4" type="video/mp4">
+          </video>
           <h2 class="subtitle has-text-centered">
             U-Quadratic Noise - Instance 3
           </h2>
         </div>
         <!-- U-Quadratic Noise - Instance 4 -->
-        <div class="item">
-          <img src="static/videos/tracking_video_INSTANCE_4_ZOOMED_quadratic_fps15.gif" alt="U-Quadratic Noise - Instance 4" loading="lazy"/>
+        <div class="item item-video">
+          <video poster="" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/tracking_video_INSTANCE_4_ZOOMED_quadratic_fps15.mp4" type="video/mp4">
+          </video>
           <h2 class="subtitle has-text-centered">
             U-Quadratic Noise - Instance 4
           </h2>
         </div>
         <!-- U-Quadratic Noise - Instance 5 -->
-        <div class="item">
-          <img src="static/videos/tracking_video_INSTANCE_5_ZOOMED_quadratic_fps15.gif" alt="U-Quadratic Noise - Instance 5" loading="lazy"/>
+        <div class="item item-video">
+          <video poster="" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/tracking_video_INSTANCE_5_ZOOMED_quadratic_fps15.mp4" type="video/mp4">
+          </video>
           <h2 class="subtitle has-text-centered">
             U-Quadratic Noise - Instance 5
           </h2>
@@ -726,7 +795,7 @@
     </div>
   </div>
 </section>
-<!-- End 3D Target Tracking Results -->
+<!-- End 3D U-Quadratic Noise Results -->
 
 
 
