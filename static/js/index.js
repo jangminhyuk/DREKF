@@ -127,7 +127,7 @@ $(document).ready(function() {
 		slidesToShow: 1,
 		loop: true,
 		infinite: true,
-		autoplay: true,
+		autoplay: false,
 		autoplaySpeed: 16000,
     }
 
@@ -138,5 +138,14 @@ $(document).ready(function() {
     
     // Setup video autoplay for carousel
     setupVideoCarouselAutoplay();
+
+    // Custom autoplay for video carousels - advance every 16 seconds
+    if (carousels && carousels.length > 0) {
+        carousels.forEach(function(carousel) {
+            setInterval(function() {
+                carousel.next();
+            }, 16000);
+        });
+    }
 
 })
