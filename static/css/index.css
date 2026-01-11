@@ -285,7 +285,7 @@ body {
 
 /* Fixed height for all carousel videos */
 .results-carousel video {
-  height: 500px;
+  height: 600px;
   object-fit: contain;
   background-color: #000;
 }
@@ -295,6 +295,34 @@ body {
   color: var(--text-secondary);
   margin-top: 1rem;
   font-weight: 500;
+}
+
+/* Make carousel navigation arrows bigger and more visible */
+.carousel .slider-navigation-next,
+.carousel .slider-navigation-previous {
+  width: 60px !important;
+  height: 60px !important;
+  background: rgba(37, 99, 235, 0.9) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: var(--shadow-lg) !important;
+  transition: var(--transition) !important;
+  z-index: 10 !important;
+}
+
+.carousel .slider-navigation-next:hover,
+.carousel .slider-navigation-previous:hover {
+  background: rgba(29, 78, 216, 1) !important;
+  transform: scale(1.1) !important;
+  box-shadow: var(--shadow-xl) !important;
+}
+
+.carousel .slider-navigation-next i,
+.carousel .slider-navigation-previous i {
+  font-size: 28px !important;
+  color: white !important;
 }
 
 /* Pagination and Misc Improvements */
