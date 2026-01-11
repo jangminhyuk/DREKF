@@ -6,7 +6,7 @@
   
   <!-- Primary Meta Tags -->
   <!-- TODO: Replace with your paper title and author names -->
-  <meta name="Distributionally Robust Extended Kalman Filter (DR-EKF)" content="PAPER_TITLE - AUTHOR_NAMES">
+  <meta name="Distributionally Robust Extended Kalman Filter (DR-EKF)" content="DR-EKF">
   <!-- TODO: Write a compelling 150-160 character description of your research -->
   <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
   <!-- TODO: Add 5-10 relevant keywords for your research area -->
@@ -324,7 +324,7 @@
         <div class="content has-text-justified">
           <!-- TODO: Replace with your paper abstract -->
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            DR-EKF
           </p>
         </div>
       </div>
@@ -395,8 +395,54 @@
 <!-- End youtube video -->
 
 
+<!-- Motivation -->
+<section class="section hero is-light" id="motivation">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Motivation</h2>
+        <div class="content has-text-justified">
+          <p>
+            The Distributionally Robust Extended Kalman Filter (DR-EKF) addresses critical limitations
+            of the standard EKF in practical applications:
+          </p>
+          <ul>
+            <li><strong>Robust to nominal-model mismatch:</strong> The EKF can degrade or even diverge when the
+            nominal noise statistics Σ<sub>w</sub> and Σ<sub>v</sub> are learned from limited data or shift
+            over time. DR-EKF optimizes against worst-case perturbations around the nominal model, ensuring
+            reliable performance under model uncertainty.</li>
+            <li><strong>Mitigates linearization/modeling error:</strong> By allowing ambiguity in the prior
+            (or process noise), DR-EKF can absorb part of the linearization or model mismatch that the EKF
+            would otherwise handle incorrectly.</li>
+          </ul>
+          <p>
+            In nonlinear systems, it is crucial to account for distributional ambiguity, as accurately
+            identifying the true process and measurement noise distributions is substantially more challenging
+            than in linear settings. <strong>This is why we need DR-EKF!</strong>
+          </p>
+
+          <h4 class="title is-5" style="margin-top: 2rem;">Compared Methods</h4>
+          <p>
+            We compare three different DR-EKF variants with the standard EKF:
+          </p>
+          <ul>
+            <li><strong>CASE 1 (CDC style):</strong> Ambiguity set constructed on the prior state and
+            measurement noise distribution. This approach models uncertainty in both the predicted state
+            distribution and the measurement noise.</li>
+            <li><strong>CASE 1 (CDC-FW):</strong> Frank-Wolfe version of CASE 1, which uses an iterative
+            optimization approach to efficiently solve the distributionally robust problem.</li>
+            <li><strong>CASE 2 (Noise-centric, TAC style):</strong> Ambiguity set constructed on the process and
+            measurement noise distributions. This approach focuses on modeling uncertainty directly in
+            the noise distributions rather than the predicted state.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Dynamic and Observation Models -->
-<section class="section hero is-light" id="models">
+<section class="section" id="models">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -406,6 +452,11 @@
             We consider nonlinear coordinated-turn (CT) motion models in both 2D and 3D,
             together with radar-type nonlinear observation models. These models are commonly
             used as benchmarks for nonlinear Bayesian filtering and target tracking.
+          </p>
+          <p>
+            The nominal covariance matrices Σ<sub>w</sub> (process noise) and Σ<sub>v</sub>
+            (measurement noise) are estimated using the Expectation-Maximization (EM) algorithm
+            from training data, providing a data-driven approach to parameter estimation.
           </p>
         </div>
       </div>
