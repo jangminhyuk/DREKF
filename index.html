@@ -6,7 +6,7 @@
   
   <!-- Primary Meta Tags -->
   <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="PAPER_TITLE - AUTHOR_NAMES">
+  <meta name="Distributionally Robust Extended Kalman Filter" content="PAPER_TITLE - AUTHOR_NAMES">
   <!-- TODO: Write a compelling 150-160 character description of your research -->
   <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
   <!-- TODO: Add 5-10 relevant keywords for your research area -->
@@ -314,23 +314,6 @@
 </section>
 
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -415,38 +398,335 @@
 <!-- End youtube video -->
 
 
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
+<!-- Dynamic and Observation Models -->
+<section class="section hero is-light" id="models">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Dynamic and Observation Models</h2>
+        <div class="content has-text-justified">
+          <p>
+            We consider nonlinear coordinated-turn (CT) motion models in both 2D and 3D,
+            together with radar-type nonlinear observation models. These models are commonly
+            used as benchmarks for nonlinear Bayesian filtering and target tracking.
+          </p>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End video carousel -->
+
+<!-- 2D Coordinated-Turn Model -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h3 class="title is-4">2D Coordinated-Turn Dynamics</h3>
+        <div class="content has-text-justified">
+          <p>
+            In the 2D coordinated-turn model, the target moves in the horizontal plane with
+            approximately constant speed while undergoing a constant turn rate.
+            The state vector at time step <em>k</em> is
+          </p>
+
+          <p style="text-align:center;">
+            x<sub>k</sub> = [ p<sub>x</sub>, p<sub>y</sub>, v<sub>x</sub>, v<sub>y</sub>, ω ]<sup>T</sup>,
+          </p>
+
+          <p>
+            where (p<sub>x</sub>, p<sub>y</sub>) denotes the position, (v<sub>x</sub>, v<sub>y</sub>)
+            denotes the velocity, and ω is the turn rate.
+            The sampling interval is denoted by Δt.
+          </p>
+
+          <p>
+            When the turn rate is nonzero, the target follows a circular arc. The position
+            and velocity are propagated using a rotation matrix parameterized by
+            φ = ωΔt. When the turn rate is close to zero, the model smoothly reduces to
+            a constant-velocity (CV) motion model.
+          </p>
+
+          <p>
+            The turn rate is modeled as a slowly varying state and is assumed to remain
+            constant between consecutive time steps, up to additive process noise.
+          </p>
+
+          <h4 class="title is-5">2D Radar Observation Model</h4>
+
+          <p>
+            The 2D radar sensor provides range and bearing measurements relative to the sensor
+            location. Let (s<sub>x</sub>, s<sub>y</sub>) denote the radar position.
+            The measurement consists of:
+          </p>
+
+          <ul>
+            <li><strong>Range:</strong> Euclidean distance between the target and the sensor</li>
+            <li><strong>Bearing:</strong> Azimuth angle in the horizontal plane</li>
+          </ul>
+
+          <p>
+            This leads to a nonlinear measurement function involving square roots and
+            inverse trigonometric functions, which motivates the use of nonlinear filters
+            such as the Extended Kalman Filter (EKF).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2D Target Tracking Results -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">2D Target Tracking Results</h2>
+      <div id="results-carousel-2d" class="carousel results-carousel">
+        <!-- Gaussian Noise - Mean -->
+        <div class="item">
+          <img src="static/videos/tracking_video_MEAN_normal_fps15.gif" alt="2D Gaussian Noise - Mean" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            Gaussian Noise - Mean
+          </h2>
+        </div>
+        <!-- Gaussian Noise - Instance 1 -->
+        <div class="item">
+          <img src="static/videos/tracking_video_INSTANCE_1_normal_fps15.gif" alt="2D Gaussian Noise - Instance 1" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            Gaussian Noise - Instance 1
+          </h2>
+        </div>
+        <!-- Gaussian Noise - Instance 2 -->
+        <div class="item">
+          <img src="static/videos/tracking_video_INSTANCE_2_normal_fps15.gif" alt="2D Gaussian Noise - Instance 2" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            Gaussian Noise - Instance 2
+          </h2>
+        </div>
+        <!-- Gaussian Noise - Instance 3 -->
+        <div class="item">
+          <img src="static/videos/tracking_video_INSTANCE_3_normal_fps15.gif" alt="2D Gaussian Noise - Instance 3" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            Gaussian Noise - Instance 3
+          </h2>
+        </div>
+        <!-- Gaussian Noise - Instance 4 -->
+        <div class="item">
+          <img src="static/videos/tracking_video_INSTANCE_4_normal_fps15.gif" alt="2D Gaussian Noise - Instance 4" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            Gaussian Noise - Instance 4
+          </h2>
+        </div>
+        <!-- Gaussian Noise - Instance 5 -->
+        <div class="item">
+          <img src="static/videos/tracking_video_INSTANCE_5_normal_fps15.gif" alt="2D Gaussian Noise - Instance 5" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            Gaussian Noise - Instance 5
+          </h2>
+        </div>
+        <!-- U-Quadratic Noise - Mean -->
+        <div class="item">
+          <img src="static/videos/tracking_video_MEAN_quadratic_fps15.gif" alt="2D U-Quadratic Noise - Mean" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            U-Quadratic Noise - Mean
+          </h2>
+        </div>
+        <!-- U-Quadratic Noise - Instance 1 -->
+        <div class="item">
+          <img src="static/videos/tracking_video_INSTANCE_1_quadratic_fps15.gif" alt="2D U-Quadratic Noise - Instance 1" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            U-Quadratic Noise - Instance 1
+          </h2>
+        </div>
+        <!-- U-Quadratic Noise - Instance 2 -->
+        <div class="item">
+          <img src="static/videos/tracking_video_INSTANCE_2_quadratic_fps15.gif" alt="2D U-Quadratic Noise - Instance 2" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            U-Quadratic Noise - Instance 2
+          </h2>
+        </div>
+        <!-- U-Quadratic Noise - Instance 3 -->
+        <div class="item">
+          <img src="static/videos/tracking_video_INSTANCE_3_quadratic_fps15.gif" alt="2D U-Quadratic Noise - Instance 3" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            U-Quadratic Noise - Instance 3
+          </h2>
+        </div>
+        <!-- U-Quadratic Noise - Instance 4 -->
+        <div class="item">
+          <img src="static/videos/tracking_video_INSTANCE_4_quadratic_fps15.gif" alt="2D U-Quadratic Noise - Instance 4" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            U-Quadratic Noise - Instance 4
+          </h2>
+        </div>
+        <!-- U-Quadratic Noise - Instance 5 -->
+        <div class="item">
+          <img src="static/videos/tracking_video_INSTANCE_5_quadratic_fps15.gif" alt="2D U-Quadratic Noise - Instance 5" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            U-Quadratic Noise - Instance 5
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End 2D Target Tracking Results -->
+
+
+<!-- 3D Coordinated-Turn Model -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h3 class="title is-4">3D Coordinated-Turn Dynamics</h3>
+        <div class="content has-text-justified">
+          <p>
+            The 3D coordinated-turn model extends the 2D model by incorporating vertical motion.
+            The state vector is
+          </p>
+
+          <p style="text-align:center;">
+            x<sub>k</sub> = [ p<sub>x</sub>, p<sub>y</sub>, p<sub>z</sub>,
+            v<sub>x</sub>, v<sub>y</sub>, v<sub>z</sub>, ω ]<sup>T</sup>.
+          </p>
+
+          <p>
+            The motion in the horizontal (x–y) plane follows the same coordinated-turn dynamics
+            as in the 2D case, while the vertical (z) motion follows a constant-velocity model.
+            This structure captures realistic aircraft or UAV motion where turning is mainly
+            horizontal and altitude changes are smoother.
+          </p>
+
+          <p>
+            As in the 2D case, when the turn rate approaches zero, the horizontal dynamics
+            reduce to a constant-velocity model, ensuring continuity and numerical stability.
+          </p>
+
+          <h4 class="title is-5">3D Radar Observation Model</h4>
+
+          <p>
+            The 3D radar provides range, azimuth, and elevation measurements. Let
+            (s<sub>x</sub>, s<sub>y</sub>, s<sub>z</sub>) denote the sensor position.
+            The measurement components are:
+          </p>
+
+          <ul>
+            <li><strong>Range:</strong> 3D Euclidean distance between target and sensor</li>
+            <li><strong>Azimuth:</strong> Horizontal bearing angle</li>
+            <li><strong>Elevation:</strong> Vertical angle relative to the horizontal plane</li>
+          </ul>
+
+          <p>
+            This observation model is highly nonlinear and exhibits singularities when the
+            target is directly above or below the sensor. In practice, filtering robustness
+            can be improved by noise inflation or gating strategies in such configurations.
+          </p>
+
+          <p>
+            These nonlinear dynamics and observation models provide a challenging yet realistic
+            testbed for evaluating robust nonlinear state estimation methods, including
+            distributionally robust extensions of the Extended Kalman Filter.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3D Target Tracking Results -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">3D Target Tracking Results</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <!-- Gaussian Noise - Mean Zoomed -->
+        <div class="item">
+          <img src="static/videos/tracking_video_MEAN_ZOOMED_normal_fps15.gif" alt="Gaussian Noise - Mean Zoomed" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            Gaussian Noise - Mean (Zoomed)
+          </h2>
+        </div>
+        <!-- Gaussian Noise - Instance 1 -->
+        <div class="item">
+          <img src="static/videos/tracking_video_INSTANCE_1_ZOOMED_normal_fps15.gif" alt="Gaussian Noise - Instance 1" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            Gaussian Noise - Instance 1
+          </h2>
+        </div>
+        <!-- Gaussian Noise - Instance 2 -->
+        <div class="item">
+          <img src="static/videos/tracking_video_INSTANCE_2_ZOOMED_normal_fps15.gif" alt="Gaussian Noise - Instance 2" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            Gaussian Noise - Instance 2
+          </h2>
+        </div>
+        <!-- Gaussian Noise - Instance 3 -->
+        <div class="item">
+          <img src="static/videos/tracking_video_INSTANCE_3_ZOOMED_normal_fps15.gif" alt="Gaussian Noise - Instance 3" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            Gaussian Noise - Instance 3
+          </h2>
+        </div>
+        <!-- Gaussian Noise - Instance 4 -->
+        <div class="item">
+          <img src="static/videos/tracking_video_INSTANCE_4_ZOOMED_normal_fps15.gif" alt="Gaussian Noise - Instance 4" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            Gaussian Noise - Instance 4
+          </h2>
+        </div>
+        <!-- Gaussian Noise - Instance 5 -->
+        <div class="item">
+          <img src="static/videos/tracking_video_INSTANCE_5_ZOOMED_normal_fps15.gif" alt="Gaussian Noise - Instance 5" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            Gaussian Noise - Instance 5
+          </h2>
+        </div>
+        <!-- U-Quadratic Noise - Mean Zoomed -->
+        <div class="item">
+          <img src="static/videos/tracking_video_MEAN_ZOOMED_quadratic_fps15.gif" alt="U-Quadratic Noise - Mean Zoomed" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            U-Quadratic Noise - Mean (Zoomed)
+          </h2>
+        </div>
+        <!-- U-Quadratic Noise - Instance 1 -->
+        <div class="item">
+          <img src="static/videos/tracking_video_INSTANCE_1_ZOOMED_quadratic_fps15.gif" alt="U-Quadratic Noise - Instance 1" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            U-Quadratic Noise - Instance 1
+          </h2>
+        </div>
+        <!-- U-Quadratic Noise - Instance 2 -->
+        <div class="item">
+          <img src="static/videos/tracking_video_INSTANCE_2_ZOOMED_quadratic_fps15.gif" alt="U-Quadratic Noise - Instance 2" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            U-Quadratic Noise - Instance 2
+          </h2>
+        </div>
+        <!-- U-Quadratic Noise - Instance 3 -->
+        <div class="item">
+          <img src="static/videos/tracking_video_INSTANCE_3_ZOOMED_quadratic_fps15.gif" alt="U-Quadratic Noise - Instance 3" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            U-Quadratic Noise - Instance 3
+          </h2>
+        </div>
+        <!-- U-Quadratic Noise - Instance 4 -->
+        <div class="item">
+          <img src="static/videos/tracking_video_INSTANCE_4_ZOOMED_quadratic_fps15.gif" alt="U-Quadratic Noise - Instance 4" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            U-Quadratic Noise - Instance 4
+          </h2>
+        </div>
+        <!-- U-Quadratic Noise - Instance 5 -->
+        <div class="item">
+          <img src="static/videos/tracking_video_INSTANCE_5_ZOOMED_quadratic_fps15.gif" alt="U-Quadratic Noise - Instance 5" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            U-Quadratic Noise - Instance 5
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End 3D Target Tracking Results -->
 
 
 
