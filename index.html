@@ -401,45 +401,70 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Motivation</h2>
+
         <div class="content has-text-justified">
           <p>
-            The Distributionally Robust Extended Kalman Filter (DR-EKF) addresses critical limitations
-            of the standard EKF in practical applications:
+            The Distributionally Robust Extended Kalman Filter (DR-EKF) is designed to address two common
+            failure modes of the standard EKF in practice.
           </p>
+
           <ul>
-            <li><strong>Robust to nominal-model mismatch:</strong> The EKF can degrade or even diverge when the
-            nominal noise statistics Σ<sub>w</sub> and Σ<sub>v</sub> are learned from limited data or shift
-            over time. DR-EKF optimizes against worst-case perturbations around the nominal model, ensuring
-            reliable performance under model uncertainty.</li>
-            <li><strong>Mitigates linearization/modeling error:</strong> By allowing ambiguity in the prior
-            (or process noise), DR-EKF can absorb part of the linearization or model mismatch that the EKF
-            would otherwise handle incorrectly.</li>
+            <li>
+              <strong>Robustness to noise-statistics mismatch:</strong>
+              EKF performance can deteriorate—or even diverge—when the nominal noise covariances
+              &Sigma;<sub>w</sub> and &Sigma;<sub>v</sub> are estimated from limited data or drift over time.
+              DR-EKF guards against worst-case perturbations around the nominal model, improving reliability
+              under uncertainty.
+            </li>
+            <li>
+              <strong>Mitigation of modeling and linearization error:</strong>
+              In nonlinear systems, linearization and imperfect dynamics can introduce systematic mismatch.
+              By allowing distributional ambiguity (e.g., in the prior or noise models), DR-EKF can absorb part
+              of this mismatch that the EKF would otherwise handle poorly.
+            </li>
           </ul>
+
           <p>
-            In nonlinear systems, it is crucial to account for distributional ambiguity, as accurately
-            identifying the true process and measurement noise distributions is substantially more challenging
-            than in linear settings. <strong>This is why we need DR-EKF!</strong>
+            In practice, tuning noise covariances is often a major pain point and remains an open problem.
+            A useful workflow is: (i) estimate noise covariances using a data-driven method, then (ii) apply
+            a distributionally robust (DR) formulation to improve robustness to estimation error and drift.
+          </p>
+
+          <p>
+            Overall, nonlinear filtering benefits from explicitly accounting for distributional ambiguity,
+            since accurately identifying the true process and measurement noise distributions is substantially
+            harder than in linear settings.
           </p>
 
           <h4 class="title is-5" style="margin-top: 2rem;">Compared Methods</h4>
           <p>
-            We compare three different DR-EKF variants with the standard EKF:
+            We compare the standard EKF with three DR-EKF variants:
           </p>
+
           <ul>
-            <li><strong>CASE 1 (CDC style):</strong> Ambiguity set constructed on the prior state and
-            measurement noise distribution. This approach models uncertainty in both the predicted state
-            distribution and the measurement noise.</li>
-            <li><strong>CASE 1 (CDC-FW):</strong> Frank-Wolfe version of CASE 1, which uses an iterative
-            optimization approach to efficiently solve the distributionally robust problem.</li>
-            <li><strong>CASE 2 (Noise-centric, TAC style):</strong> Ambiguity set constructed on the process and
-            measurement noise distributions. This approach focuses on modeling uncertainty directly in
-            the noise distributions rather than the predicted state.</li>
+            <li>
+              <strong>Case 1 (CDC-style):</strong>
+              Ambiguity set on the prior state and measurement-noise distributions, modeling uncertainty in
+              both the predicted state distribution and measurement noise.
+            </li>
+            <li>
+              <strong>Case 1 (CDC-FW):</strong>
+              Frank–Wolfe implementation of Case 1, using an iterative method to solve the DR optimization
+              efficiently.
+            </li>
+            <li>
+              <strong>Case 2 (Noise-centric, TAC-style):</strong>
+              Ambiguity set on the process and measurement-noise distributions, focusing robustness directly
+              on noise modeling rather than the predicted state distribution.
+            </li>
           </ul>
         </div>
+
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- Dynamic and Observation Models -->
 <section class="section" id="models">
